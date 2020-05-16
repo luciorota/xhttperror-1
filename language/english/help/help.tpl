@@ -11,15 +11,15 @@
     <p>You will need to manually add the following lines to the <b>.htaccess</b> file in your XOOPS root directory for
         the error codes to work.</p>
     <div class="xoopsCode">
-        ErrorDocument 404 [xoops_url]/modules/xhttperror/index.php?error=404
+        ErrorDocument 404 [xoops_url]/modules/xhttperror/index.php?error=404&amp;REMOTE_ADDR=%{REMOTE_ADDR}&amp;REQUEST_URI=%{REQUEST_URI}&amp;HTTP_REFERER=%{HTTP_REFERER}
         <br>
-        ErrorDocument 500 [xoops_url]/modules/xhttperror/index.php?error=500
+        ErrorDocument 500 [xoops_url]/modules/xhttperror/index.php?error=500&amp;REMOTE_ADDR=%{REMOTE_ADDR}&amp;REQUEST_URI=%{REQUEST_URI}&amp;HTTP_REFERER=%{HTTP_REFERER}
         <br>
-        ErrorDocument 403 [xoops_url]/modules/xhttperror/index.php?error=403
+        ErrorDocument 403 [xoops_url]/modules/xhttperror/index.php?error=403&amp;REMOTE_ADDR=%{REMOTE_ADDR}&amp;REQUEST_URI=%{REQUEST_URI}&amp;HTTP_REFERER=%{HTTP_REFERER}
         <br>
-        ErrorDocument 403 [xoops_url]/modules/xhttperror/index.php?error=[status code]
+        ErrorDocument 403 [xoops_url]/modules/xhttperror/index.php?error=<b>[status code]</b>&amp;REMOTE_ADDR=%{REMOTE_ADDR}&amp;REQUEST_URI=%{REQUEST_URI}&amp;HTTP_REFERER=%{HTTP_REFERER}
     </div>
-    <p>Where [status_code] is the status code for server errors and [xoops_url] is the URL to your main XOOPS directory
+    <p>Where <b>[status code]</b> is the status code for server errors and [xoops_url] is the URL to your main XOOPS directory
         WITHOUT trailing slash (<{$xoops_url}>)</p>
     <br>
     <p>Detailed instructions on installing modules are available in the <a
