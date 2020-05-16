@@ -28,4 +28,16 @@ class XhttperrorCorePreload extends \XoopsPreloadItem
     {
         require_once __DIR__ . '/autoloader.php';
     }
+ 
+    public static function eventCoreIndexStart($args)
+    {
+        if (!empty($_GET)) {
+//TODO generate a kind of a report ... not an error report because this is not an error, maybe a warning report?
+            if (!empty($_SERVER['HTTP_REFERER'])) {
+                @file_put_contents(__DIR__ . '/queryurllog.txt', $_SERVER['HTTP_REFERER'] . "n", FILE_APPEND);
+            }
+            http_response_code(404);
+            exit;
+        }
+    } 
 }
