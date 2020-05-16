@@ -16,17 +16,17 @@
         </tr>
         <{foreach from=$reports item='report'}>
             <tr class="<{cycle values='odd, even'}>">
-                <td><{$report.report_id}></td>
+                <td class="center"><{$report.report_id}></td>
                 <td><{$report.report_user}></td>
-                <td><{$report.report_statuscode}></td>
+                <td class="center"><{$report.report_statuscode}></td>
                 <td><{$report.report_date}></td>
                 <td><{$report.report_referer}></td>
                 <td><{$report.report_useragent}></td>
                 <td><{$report.report_remoteaddr}></td>
                 <td><{$report.report_requesteduri}></td>
-                <td>
+                <td class="center">
                     <a href="reports.php?op=delete_report&amp;report_id=<{$report.report_id}>"
-                       title="<{$smarty.const._DELETE}>"><{$smarty.const._DELETE}></a>
+                       title="<{$smarty.const._DELETE}>"><img src="<{xoModuleIcons16 delete.png}>" alt="<{$smarty.const._DELETE}>"></a>
                 </td>
             </tr>
         <{/foreach}>
